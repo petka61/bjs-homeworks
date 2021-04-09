@@ -9,7 +9,7 @@
  }
 
  function sayHello(userName) {
-   return "Привет, мир! Меня зовут " + userName;
+   return `Привет, мир! Меня зовут ${userName}`;
  }
 
  let x = 2;
