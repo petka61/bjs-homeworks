@@ -1,13 +1,13 @@
 "use strict";
 
 function getResult(a, b, c) {
-const x = [];
-const discr = Number(b**2 - 4 * a * c);
+  const x = [];
+  const discr = Number(b ** 2 - 4 * a * c);
 
-switch (true) {
+  switch (true) {
     case discr > 0:
-    x[0] = Number(((-1 * b) + Math.sqrt(discr)) / (2 * a));
-    x[1] = Number(((-1 * b) - Math.sqrt(discr)) / (2 * a));
+      x[0] = Number(((-1 * b) + Math.sqrt(discr)) / (2 * a));
+      x[1] = Number(((-1 * b) - Math.sqrt(discr)) / (2 * a));
       return x;
       break
 
@@ -50,7 +50,7 @@ function getAverageMark(marks) {
 function askDrink(name, dateOfBirthday) {
   let result = 0;
   let now = new Date();
-  result = now.getFullYear - dateOfBirthday.getFullYear;
+  result = now.getFullYear() - dateOfBirthday.getFullYear();
   if (result > 18) {
     return `Не желаете ли олд-фэшн, ${name}?`
   } else {
