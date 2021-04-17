@@ -24,9 +24,35 @@ function showSolutionsMessage(a, b, c) {
   console.log(`Значение дискриминанта: ${result.D}`);
   if (result.D > 0) {
     console.log(`Уравнение имеет два корня X₁ = ${result.roots[0]}, X₂ = ${result.roots[1]}`);
-  }	else if (result.D == 0) {
+  }	else if (result.D === 0) {
     console.log(`Уравнение имеет один корень X₁ = ${result.roots[0]}`);
   } else if (result.D < 0) {
     console.log('Уравнение не имеет вещественных корней');
+  }
+}
+
+function getAverageScore(data) {
+const subjects = new Object();
+subjects.algebra = [];
+subjects.geometry = [];
+subjects.russian = [];
+subjects.physics = [];
+subjects.music = [];
+subjects.english = [];
+subjects.poetry = [];
+subjects.chemistry = [];
+subjects.french = [];
+}
+
+function getAverageMark(marks) {
+  let meanValue = 0;
+  if (marks.length === 0) {
+    return 0;
+  } else if (marks.length > 0) {
+    for (let i = 0; i < marks[i]; i++) {
+      meanValue += marks[i];
+    }
+    meanValue /= marks.length;
+    return meanValue;
   }
 }
