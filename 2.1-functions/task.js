@@ -54,3 +54,20 @@ function getAverageMark(marks) {
     return meanValue;
   }
 }
+
+function getPersonData(secretData) {
+  //
+  secretData.firstName = 'aaa';
+  secretData.lastName = 'bbb';
+  secretData.aaa = 1;
+  secretData.bbb = 0;
+  return secretData;
+}
+
+function getDecodedValue(secret) {
+  if (secret === 1) {
+    return "Эмильо";
+  } else if (secret === 0) {
+    return "Родриго";
+  }
+}
