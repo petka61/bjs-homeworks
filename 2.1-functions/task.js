@@ -56,11 +56,12 @@ function getAverageMark(marks) {
 }
 
 function getPersonData(secretData) {
-  //
-  secretData.firstName = 'aaa';
-  secretData.lastName = 'bbb';
   secretData.aaa = 1;
   secretData.bbb = 0;
+  secretData.firstName = getDecodedValue(secretData.aaa);
+  secretData.lastName = getDecodedValue(secretData.bbb);
+  delete secretData.aaa;
+  delete secretData.bbb;
   return secretData;
 }
 
