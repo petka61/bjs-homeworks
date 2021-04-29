@@ -65,6 +65,17 @@
      this.books = [];
    }
 
+   findBookBy(type, value) {
+     for (let findElem of this.books) {
+       if (findElem[type] == value) {
+         console.log(findElem)
+         return findElem;
+       }
+     }
+     return null;
+   }
+
+
    addBook = function(book) {
      const takeBook = new Object(book);
      if (takeBook.state > 30) {
@@ -72,25 +83,14 @@
      }
    }
 
-   findBookBy(type, value) {
-     for (let book in this.books) {
-       if ()
-     }
-     this.type = type;
-     if (this.books[0][this.type] == value) {
-       return this.books[0].name;
-     } else {
-       return null
-     }
-   }
-
    giveBookByName(bookName) {
-     if (this.books[0]['name'] === bookName) {
-       console.log(this.name)
-       return this.name
-     } else {
-       return null
+     console.log(bookName)
+     for (let book of this.books) {
+       if (this.books[book] === bookName) {
+         return this.name;
+       } else {
+         return null
+       }
      }
-
    }
  }
