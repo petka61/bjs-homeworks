@@ -90,3 +90,13 @@
      return null;
    }
  }
+
+ class StudentLog {
+   constructor(name) {
+     this.name = name;
+   }
+   getName(name) {
+     return this.name;
+   }
+ };
+  const log = new StudentLog('Олег Никифоров')
