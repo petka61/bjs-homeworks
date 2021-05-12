@@ -31,30 +31,30 @@
  }
 
  class Book extends PrintEditionItem {
-   constructor(name, releaseDate, pagesCount, author) {
-     super(name, releaseDate, pagesCount, author);
+   constructor(author, name, releaseDate, pagesCount) {
+     super(name, releaseDate, pagesCount);
      this.type = 'book';
-     this.author = this.name;
+     this.author = author;
    }
  }
 
  class NovelBook extends Book {
-   constructor(name, releaseDate, pagesCount) {
-     super(name, releaseDate, pagesCount);
+   constructor(author, name, releaseDate, pagesCount) {
+     super(author, name, releaseDate, pagesCount);
      this.type = 'novel';
    }
  }
 
  class FantasticBook extends Book {
-   constructor(name, releaseDate, pagesCount) {
-     super(name, releaseDate, pagesCount);
+   constructor(author, name, releaseDate, pagesCount) {
+     super(author, name, releaseDate, pagesCount);
      this.type = 'fantastic';
    }
  }
 
  class DetectiveBook extends Book {
-   constructor(name, releaseDate, pagesCount) {
-     super(name, releaseDate, pagesCount);
+   constructor(author, name, releaseDate, pagesCount) {
+     super(author, name, releaseDate, pagesCount);
      this.type = 'detective';
    }
  }
@@ -65,32 +65,28 @@
      this.books = [];
    }
 
+   addBook(book) {
+     if (book.state > 30) {
+       this.books.push(book);
+     }
+   }
+
    findBookBy(type, value) {
      for (let findElem of this.books) {
        if (findElem[type] == value) {
-         console.log(findElem)
          return findElem;
        }
      }
      return null;
    }
 
-
-   addBook = function(book) {
-     const takeBook = new Object(book);
-     if (takeBook.state > 30) {
-       this.books.push(takeBook);
-     }
-   }
-
    giveBookByName(bookName) {
-     console.log(bookName)
-     for (let book of this.books) {
-       if (this.books[book] === bookName) {
-         return this.name;
-       } else {
-         return null
+     for (let findElem of this.books) {
+       if (findElem['name'] === bookName) {
+         this.books.splice(findElem);
+         return findElem;
        }
      }
+     return null;
    }
  }
