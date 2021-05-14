@@ -83,7 +83,7 @@
    giveBookByName(bookName) {
      for (let findElem of this.books) {
        if (findElem['name'] === bookName) {
-         this.books.splice(findElem);
+         this.books.splice(findElem, 1);
          return findElem;
        }
      }
@@ -94,9 +94,31 @@
  class StudentLog {
    constructor(name) {
      this.name = name;
+
    }
+
+   const studentJournal = {};
+
    getName(name) {
      return this.name;
    }
+
+   addGrade(grade, subject) {
+     this.studentJournal.subject = [grade];
+     console.log(grade, subject)
+     console.log(studentJournal)
+   }
+
+   // function getAverageBySubject(subject) {
+  // let meanValue = 0;
+  // if (marks.length === 0) {
+  //   return 0;
+  // } else if (marks.length > 0) {
+  //   for (let i = 0; i < marks.length; i++) {
+  //     meanValue += marks[i];
+  //   }
+  //   meanValue = meanValue / marks.length;
+  //   return meanValue;
+  // }
  };
-  const log = new StudentLog('Олег Никифоров')
+  const log = new StudentLog('Олег Никифоров');
