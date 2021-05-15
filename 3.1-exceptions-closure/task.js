@@ -1,6 +1,6 @@
 function parseCount(datas) {
   let answer = Number.parseInt(datas);
-  if (isNaN(answer) === true) {
+  if (isNaN(answer)) {
     throw new Error('Невалидное значение');
   } else {
     return answer;
